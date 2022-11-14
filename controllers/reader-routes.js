@@ -1,4 +1,5 @@
-const { route } = require('./homepage-routes');
+/// QUESTION: What is this? It appeared.
+// const { route } = require('./homepage-routes'); 
 
 const router = require('express').Router();
 
