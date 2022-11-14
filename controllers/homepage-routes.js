@@ -14,3 +14,9 @@ router.get('/signup', async (req, res) => {
 router.get('/login', async (req, res) => {
     res.render('login')
 })
+
+router.get('/posts', async (req, res) => {
+    res.render('read-one')
+})
+
+module.exports = router; // Where is this sending it? 
