@@ -15,8 +15,8 @@ router.get('/login', async (req, res) => {
     res.render('login')
 })
 
-router.get('/posts', async (req, res) => {
-    res.render('read-one')
+router.get('/new', async (req, res) => {
+    res.render('write-new')
 })
 
 module.exports = router; // Where is this sending it? 

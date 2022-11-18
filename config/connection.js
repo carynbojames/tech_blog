@@ -13,3 +13,5 @@ const sequelize = new Sequelize(
 );
 
 module.exports = sequelize;
+
+///process.env.JAWSDB_URL -- helps with Horoku 

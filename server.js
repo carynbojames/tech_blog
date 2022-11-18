@@ -7,7 +7,7 @@ const sequelize = require('./config/connection')
 
 // Sets up the Express App
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 
 // Set Handlebars as the default template engine.
 /// Tells express where the views will be
@@ -18,8 +18,10 @@ app.set('view engine', 'handlebars');
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Tell express where to find the next route
-app.use(require('./controllers/homepage-routes')) 
-app.use(require('./controllers/reader-routes'))
+app.use(require('./controllers'))
+// app.use(require('./controllers/homepage-routes')) // delete after routes built
+// app.use(require('./controllers/reader-routes'))
+// app.use(require('./controllers/writer-routes'))
 // QUESTION: Can you use the app.use(require) to more than one route file?
 
 // Starts the server to begin listening
