@@ -19,10 +19,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Tell express where to find the next route
 app.use(require('./controllers'))
-// app.use(require('./controllers/homepage-routes')) // delete after routes built
-// app.use(require('./controllers/reader-routes'))
-// app.use(require('./controllers/writer-routes'))
-// QUESTION: Can you use the app.use(require) to more than one route file?
 
 // Starts the server to begin listening
 sequelize.sync({ force: false }).then(() => {

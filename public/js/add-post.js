@@ -4,13 +4,15 @@ async function newPost(event) {
     event.preventDetault();
     const blog_title = document.querySelector('#blog_title').value;
     const blog_body = document.querySelector('#blog_body').value;
+    console.log(blog_title, blog_body)
 
     const response = await fetch(`/api/posts`, {
         method: 'POST',
         body: JSON.stringify({
             blog_title,
             blog_body
-        })
+        }),
+        headers: {'Content-Type': 'application/json'}
     })
     if (response.ok) {
         document.location.replace('/')
