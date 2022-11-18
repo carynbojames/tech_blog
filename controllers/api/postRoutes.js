@@ -27,6 +27,7 @@ router.get('/', async (req, res) => {res.render('read-all')})
 // })
 
 router.post('/', async (req, res) => {
+	console.log(req.body)
 	try {
 		const entryData = await blogEntry.create({
 		// QUESTION: Does this match the model names? No
@@ -35,6 +36,7 @@ router.post('/', async (req, res) => {
 })
 res.status(200).json(entryData)
 } catch (err) {
+	console.log(err)
 	res.status(500).json(err)
 }    
 });
