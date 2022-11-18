@@ -16,7 +16,7 @@ blogEntry.init(
 			type: DataTypes.STRING,
 		}, 
 		body: {
-			type: DataTypes.TEXT
+			type: DataTypes.STRING
 		},
 		// author: {
 		// 	type: DataTypes.STRING,
@@ -29,7 +29,7 @@ blogEntry.init(
 	},
 	{
 		sequelize, 
-		timestamps: true, // Here are above? I don't know if this can be referenced
+		timestamps: false, // Here are above? I don't know if this can be referenced
 		freezeTableName: true,
 		underscored: true,
 		modelName: 'blog_entries'
