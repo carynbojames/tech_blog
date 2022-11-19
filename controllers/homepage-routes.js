@@ -29,12 +29,14 @@ router.get('/', async (req, res) => {
 })
 
 // Single Post
+// The same variable can be repeated
+// Variable blog is passed into handlebar
 router.get('/:id', async (req, res) => {
     try {
         const blogData = await blogEntry.findByPk(req.params.id)
-        const blogs = blogData.map((data) => data.get({plain: true}))
-        console.log(blogs)
-        res.render('read-one', { blogs })
+        const blog = blogData.get({plain: true})
+        console.log(blog)
+        res.render('read-one', { blog })
     } catch (err) {
         res.status(500).json(err)
     }

@@ -30,7 +30,8 @@ router.post('/', async (req, res) => {
 		const entryData = await blogEntry.create({
 		// QUESTION: Does this match the model names? No
 		title: req.body.blog_title,
-		body: req.body.blog_body
+		body: req.body.blog_body,
+		author: req.body.author
 })
 res.status(200).json(entryData)
 } catch (err) {
