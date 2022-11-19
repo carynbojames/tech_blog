@@ -1,7 +1,15 @@
 <div>Blog Posts</div>
-<div></div>
+<br>
 
 {{#each blog as |blog|}}
-<p>{{blog.title}}</p>
-<p>{{blog.body}}</p>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{blog.title}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{blog.author}}</h6>
+    <p class="card-text">{{blog.body}}</p>
+    <a href="http://localhost:3002/login" class="card-link">Card link</a>
+    <a href="https://www.google.com/" class="card-link">Google</a>
+  </div>
+</div>
+<br>
 {{/each}}

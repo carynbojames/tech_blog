@@ -4,7 +4,8 @@ async function newPost(event) {
     event.preventDefault();
     const blog_title = document.querySelector('#blog_title').value;
     const blog_body = document.querySelector('#blog_body').value;
-    console.log(blog_title, blog_body)
+    const author = document.querySelector('#author').value;
+    console.log(blog_title, blog_body, author)
 
     // fetch is creating the req.
     // the body gives it the .body
@@ -13,7 +14,8 @@ async function newPost(event) {
         method: 'POST',
         body: JSON.stringify({
             blog_title,
-            blog_body
+            blog_body, 
+            author
         }),
         headers: {'Content-Type': 'application/json'}
     })

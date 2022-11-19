@@ -18,13 +18,13 @@ blogEntry.init(
 		body: {
 			type: DataTypes.STRING
 		},
-		// author: {
-		// 	type: DataTypes.STRING,
+		author: {
+			type: DataTypes.STRING,
 		// 	references: {
 		// 		model: 'users',
 		// 		key: 'id'
 		// 	}
-		// } 
+		} 
 		// QUESTION: Do I add a date? Or is that in the second object?
 	},
 	{
