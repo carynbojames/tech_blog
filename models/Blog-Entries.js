@@ -29,7 +29,7 @@ blogEntry.init(
 	},
 	{
 		sequelize, 
-		timestamps: false, // Here are above? I don't know if this can be referenced
+		// timestamps: false, // Here or above? I don't know if this can be referenced
 		freezeTableName: true,
 		underscored: true,
 		modelName: 'blog_entries'

@@ -4,8 +4,6 @@ const blogEntry = require('../../models/Blog-Entries')
 
 // URL: api/posts
 
-// GET form for new blog post
-router.get('/new', (req, res) => res.render('write-new'))
 
 // GET all blog posts -- route works
 router.get('/', async (req, res) => {res.render('read-all')})

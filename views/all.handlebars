@@ -1,2 +1,7 @@
 <div>Blog Posts</div>
-<div>test</div>
+<div></div>
+
+{{#each blog as |blog|}}
+<p>{{blog.title}}</p>
+<p>{{blog.body}}</p>
+{{/each}}

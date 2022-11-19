@@ -2,16 +2,17 @@
 <form class="new-blog-form">
     <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Title</label>
-    <input type="email" class="form-control" id="blog_title" placeholder="Hello">
+    <input type="text" class="form-control" id="blog_title" placeholder="Hello">
     </div>
     <div class="mb-3">
     <label for="body" class="form-label">Blog Entry</label>
     <textarea class="form-control" id="blog_body" placeholder="Thanks for sharing" rows="3"></textarea>
     </div>
     <div class="d-grid gap-2 col-6 mx-auto">
-    <button class="btn btn-primary" type="button" id="submit">Submit</button>
+    <button class="btn btn-primary" type="submit" id="submit">Submit</button>
     <button class="btn btn-primary" type="button">"Future"</button>
     </div>
 </form>
 
+{{!--- Remember to link Javascript file ---}}
 <script src="js/add-post.js"></script>

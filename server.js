@@ -9,6 +9,10 @@ const sequelize = require('./config/connection')
 const app = express();
 const PORT = process.env.PORT || 3002;
 
+// Middleware to stringify
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
 // Set Handlebars as the default template engine.
 /// Tells express where the views will be
 app.engine('handlebars', hbs.engine);

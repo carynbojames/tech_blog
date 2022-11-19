@@ -1,11 +1,14 @@
 /// Reference: 14-MVC > 10-Stu_Handlebars > js > add-dish.js
 
 async function newPost(event) {
-    event.preventDetault();
+    event.preventDefault();
     const blog_title = document.querySelector('#blog_title').value;
     const blog_body = document.querySelector('#blog_body').value;
     console.log(blog_title, blog_body)
 
+    // fetch is creating the req.
+    // the body gives it the .body
+    // result is req.body
     const response = await fetch(`/api/posts`, {
         method: 'POST',
         body: JSON.stringify({
@@ -21,7 +24,7 @@ async function newPost(event) {
     }
 }
 
-document.querySelector('new-blog-form').addEventListener('submit', newPost)
+document.querySelector('.new-blog-form').addEventListener('submit', newPost)
 
 // QUESTION: How do you POST the entry?
 // QUESTION: How do you GET the entry? 
