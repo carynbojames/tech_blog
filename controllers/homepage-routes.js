@@ -19,10 +19,17 @@ router.get('/new', (req, res) => res.render('write-new'))
 // Homepage
 router.get('/', async (req, res) => {
     try {
+        // Retrieve all posts from db
         const blogData = await blogEntry.findAll()
+        // Serialize the data
+        // plain:true = no metadata
         const blog = blogData.map((data) => data.get({plain: true}))
         console.log(blog)
+        // Respond with template to render along with data retrieved
+        // Data must be an object. Blog is an xx. 
+        // Property name: blog; value: blog
         res.render('all', { blog })
+        // Result is an array
     } catch (err) {
         res.status(500).json(err)
     }
@@ -41,6 +48,7 @@ router.get('/:id', async (req, res) => {
         res.status(500).json(err)
     }
 })
+
 
 
 module.exports = router; // Where is this sending it? 
