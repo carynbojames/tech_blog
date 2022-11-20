@@ -7,6 +7,7 @@ const { restart } = require('nodemon');
 // URL: api/posts
 
 
+
 // GET all blog posts -- route works
 router.get('/', async (req, res) => {res.render('read-all')})
 // router.get('/posts', async (req, res) => {

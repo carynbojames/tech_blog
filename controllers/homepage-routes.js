@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const blogEntry = require('.././models/Blog-Entries')
-// const blogComments = require('')
+const blogComments = require('.././models/Blog-Comments')
 
 // Signup
 router.get('/signup', async (req, res) => {
