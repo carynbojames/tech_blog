@@ -10,20 +10,22 @@ async function comment(event) {
         }),
         headers: {'Content-Type': 'application/json'} 
     })
-
-    // var text = $('<textarea>')
-    // text.remove("form-control")
-    // text.addClass('form-control-plaintext')
-    // var btn = $('<button>')
-    // btn.hide()
-
+    
     if (response.ok) {
-        document.location.replace('/')
+        console.log(response)
+        // document.location.replace('/')
+        // var text = $('<textarea>')
+        // text.remove("form-control")
+        // text.addClass('form-control-plaintext')
+        // var btn = $('<button>')
+        // btn.hide()
     } else {
         alert('Failed to add post')
     }
 }
 
-document.querySelector('#submit').addEventListener('submit', comment)
+document.querySelector('#submit').addEventListener('click', comment)
+// 'submit' a form
+// 'click' a button
 
 // btn.on('submit', () => {btn.hide()})
