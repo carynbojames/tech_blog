@@ -42,18 +42,18 @@ router.post('/', async (req, res) => {
 	}    
 });
 
-router.post('/comments', async (req, res) => {
-	console.log('new comment req.body', req.body)
-	try {
-		const commentData = await blogComments.create({
-		comment: req.body.comment
-		})
-	res.status(200).json(commentData)
-	} catch (err) {
-		console.log(err)
-		res.status(500).json(err)
-	}
-})
+// router.post('/comments', async (req, res) => {
+// 	console.log('new comment req.body', req.body)
+// 	try {
+// 		const commentData = await blogComments.create({
+// 		comment: req.body.comment
+// 		})
+// 	res.status(200).json(commentData)
+// 	} catch (err) {
+// 		console.log(err)
+// 		res.status(500).json(err)
+// 	}
+// })
 
 // router.get('/', async (req, res) => {
 // 	const entryData = await blogEntry.findAll().catch((err) => {

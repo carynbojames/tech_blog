@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const blogEntry = require('.././models/Blog-Entries')
-
-
+// const blogComments = require('')
 
 // Signup
 router.get('/signup', async (req, res) => {
@@ -48,6 +47,20 @@ router.get('/:id', async (req, res) => {
         res.status(500).json(err)
     }
 })
+
+router.post('/:id', async (req, res) => {
+	console.log('new comment req.body', req.body)
+	try {
+		const commentData = await blogComments.create({
+		comment: req.body.comment
+		})
+	res.status(200).json(commentData)
+	} catch (err) {
+		console.log(err)
+		res.status(500).json(err)
+	}
+})
+
 
 
 
