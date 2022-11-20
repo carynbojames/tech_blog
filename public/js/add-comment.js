@@ -3,7 +3,7 @@ async function comment(event) {
     const commentEl = document.querySelector('#comment').value;
     console.log('comment', commentEl)
 
-    const response = await fetch(`/api/posts/comments`, {
+    const response = await fetch(`api/posts/comments`, {
         method: 'POST', 
         body: JSON.stringify({
             commentEl

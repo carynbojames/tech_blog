@@ -27,34 +27,34 @@ router.get('/', async (req, res) => {res.render('read-all')})
 //     }
 // })
 
-router.post('/', async (req, res) => {
-	console.log('new post req.body', req.body)
-	try {
-		const entryData = await blogEntry.create({
-		// QUESTION: Does this match the model names? No
-		title: req.body.blog_title,
-		body: req.body.blog_body,
-		author: req.body.author
-		})
-	res.status(200).json(entryData)
-	} catch (err) {
-		console.log(err)
-		res.status(500).json(err)
-	}    
-});
-
-// router.post('/comments', async (req, res) => {
-// 	console.log('new comment req.body', req.body)
+// router.post('/', async (req, res) => {
+// 	console.log('new post req.body', req.body)
 // 	try {
-// 		const commentData = await blogComments.create({
-// 		comment: req.body.comment
+// 		const entryData = await blogEntry.create({
+// 		// QUESTION: Does this match the model names? No
+// 		title: req.body.blog_title,
+// 		body: req.body.blog_body,
+// 		author: req.body.author
 // 		})
-// 	res.status(200).json(commentData)
+// 	res.status(200).json(entryData)
 // 	} catch (err) {
 // 		console.log(err)
 // 		res.status(500).json(err)
-// 	}
-// })
+// 	}    
+// });
+
+router.post('/comments', async (req, res) => {
+	console.log('new comment req.body', req.body)
+	try {
+		const commentData = await blogComments.create({
+		body: req.body.body
+		})
+	res.status(200).json(commentData)
+	} catch (err) {
+		console.log(err)
+		res.status(500).json(err)
+	}
+})
 
 // router.get('/', async (req, res) => {
 // 	const entryData = await blogEntry.findAll().catch((err) => {
