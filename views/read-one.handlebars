@@ -13,16 +13,22 @@
 <br>
 {{!-- {{> comment}} --}}
 
-<div class="mb-3">
-  <form class="commentForm">
+
+<form class="commentForm">
+  <div class="mb-3">  
     <label for="exampleFormControlTextarea1" class="form-label">Add Comment</label>
     <textarea class="form-control" id="comment" rows="3"></textarea>
-    <br>
-    <div class="d-grid gap-2 col-6 mx-auto">
-		  <button class="btn btn-primary" type="submit" id="submit">Submit</button>
-    </div>
-  </form>
-</div>
+  </div>  
+  <div class="mb-3">
+    {{!-- <label for="author" class="form-label">Author</label> --}}
+		<input type="text" class="form-control" id="author" placeholder="Author">
+  </div>
+  <br>
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <button class="btn btn-primary" type="submit" id="submit">Submit</button>
+  </div>
+</form>
+
 <br>
 
 {{!-- <div class="d-grid gap-2 col-6 mx-auto">

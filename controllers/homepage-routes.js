@@ -41,7 +41,8 @@ router.get('/:id', async (req, res) => {
     try {
         const blogData = await blogEntry.findByPk(req.params.id)
         const blog = blogData.get({plain: true})
-        console.log(blog)
+        // console.log(blog) - returns json of id number
+        // console.log(req.params.id) - returns number
         res.render('read-one', { blog })
     } catch (err) {
         res.status(500).json(err)

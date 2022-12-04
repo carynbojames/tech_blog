@@ -20,7 +20,7 @@ async function newPost(event) {
         headers: {'Content-Type': 'application/json'}
     })
     if (response.ok) {
-        document.location.replace('/')
+        document.location.replace('/new')
     } else {
         alert('Failed to add post') // ACTION: Change this action
     }

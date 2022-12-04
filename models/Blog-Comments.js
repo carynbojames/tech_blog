@@ -15,19 +15,19 @@ blogComments.init(
         body: {
             type: DataTypes.STRING
         },
-        // blogId: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         model: 'blog_entries',
-        //         key: 'id'
-        //     }
-        // },
+        blogId: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'blog_entries',
+                key: 'id'
+            }
+        },
         // author: {
         //     type: DataTypes.STRING,
-            // references: {
-            //     model: 'user',
-            //     key: 'id'
-            // }
+        //     references: {
+        //         model: 'user',
+        //         key: 'id'
+        //     }
         // }
     },
     {

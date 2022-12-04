@@ -2,7 +2,6 @@ const router = require('express').Router();
 const path = require('path') // Do I need it wherever it's used? 
 const blogEntry = require('../../models/Blog-Entries')
 const blogComments = require('../../models/Blog-Comments');
-const { restart } = require('nodemon');
 
 // URL: api/posts
 
@@ -34,9 +33,10 @@ router.post('/', async (req, res) => {
 
 router.post('/comments', async (req, res) => {
 	console.log('new comment req.body', req.body)
+	console.log(req.params.id)
 	try {
 		const commentData = await blogComments.create({
-		body: req.body.body
+			body: req.body.commentEl
 		})
 	res.status(200).json(commentData)
 	} catch (err) {

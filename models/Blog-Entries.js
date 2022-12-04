@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection')
-// const Users = require('./Users')
+const Users = require('./Users')
 
 class blogEntry extends Model {}
 
@@ -18,13 +18,13 @@ blogEntry.init(
 		body: {
 			type: DataTypes.STRING
 		},
-		author: {
-			type: DataTypes.STRING,
+		// author: {
+		// 	type: DataTypes.STRING,
 		// 	references: {
-		// 		model: 'users',
+		// 		model: 'user',
 		// 		key: 'id'
 		// 	}
-		} 
+		// } 
 		// QUESTION: Do I add a date? Or is that in the second object?
 	},
 	{
