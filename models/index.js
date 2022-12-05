@@ -2,20 +2,22 @@ const Users = require('./Users')
 const BlogEntry = require('./Blog-Entries')
 const BlogComments = require('./Blog-Comments')
 
-BlogEntry.belongsTo(Users, {
-    foreignKey: 'userId',
-    onDelete: 'CASCADE'
-  });
+// sourceModel.belongsTo(targetModel)
 
-BlogEntry.hasMany(BlogComments, {
-    foreignKey: 'blogId',
-    onDelete: 'CASCADE'
-})
+// BlogEntry.belongsTo(Users, {
+//     foreignKey: 'userId',
+//     onDelete: 'CASCADE'
+//   });
 
-BlogComments.belongsTo(Users, {
-    foreignKey: 'userId',
-    onDelete: 'CASCADE'
-})
+// BlogEntry.hasMany(BlogComments, {
+//     foreignKey: 'blogId',
+//     onDelete: 'CASCADE'
+// })
+
+// BlogComments.belongsTo(Users, {
+//     foreignKey: 'userId',
+//     onDelete: 'CASCADE'
+// })
 
 // BlogEntry.hasOne(Users, {
 //     foreignKey: 'author'
