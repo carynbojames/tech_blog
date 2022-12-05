@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const path = require('path') // Do I need it wherever it's used? 
-const blogEntry = require('../../models/Blog-Entries')
+const BlogEntry = require('../../models/Blog-Entries')
 const blogComments = require('../../models/Blog-Comments');
 
 // URL: api/posts
@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {res.render('read-all')})
 router.post('/', async (req, res) => {
 	console.log('new blog req.body', req.body)
 	try {
-		const blogData = await blogEntry.create({
+		const blogData = await BlogEntry.create({
 			title: req.body.blog_title, 
 			body: req.body.blog_body,
 			author: req.body.author
