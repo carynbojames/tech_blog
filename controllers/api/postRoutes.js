@@ -9,11 +9,14 @@ const blogComments = require('../../models/Blog-Comments');
 
 // GET all blog posts -- route works
 router.get('/', async (req, res) => {res.render('read-all')})
+
 // router.get('/posts', async (req, res) => {
 //     res.render('read-one')
 // })
 // ACTION: Use date for new post? 
 // QUESTION: Do I figure out how to limit the number of posts on a single page?
+
+
 
 
 router.post('/', async (req, res) => {
@@ -29,22 +32,6 @@ router.post('/', async (req, res) => {
 		console.log(err)
 	}
 })
-
-
-router.post('/comments', async (req, res) => {
-	console.log('new comment req.body', req.body)
-	console.log(req.params.id)
-	try {
-		const commentData = await blogComments.create({
-			body: req.body.commentEl
-		})
-	res.status(200).json(commentData)
-	} catch (err) {
-		console.log(err)
-		res.status(500).json(err)
-	}
-})
-
 
 
 // CREATE/POST a comment}

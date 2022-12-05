@@ -6,7 +6,7 @@ class blogComments extends Model {}
 
 blogComments.init(
     {
-        id: {
+        commentId: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,

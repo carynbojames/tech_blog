@@ -28,9 +28,6 @@ async function newPost(event) {
 
 document.querySelector('.new-blog-form').addEventListener('submit', newPost)
 
-// QUESTION: How do you POST the entry?
-// QUESTION: How do you GET the entry? 
-
 // Delete Example: 13-ORM > 07-Ins_Update-Delete > bookRoutes.js
 // Fetch Example: 14-MVC > 10-Stu_Handlebars > js > edit.dish.js
 // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch

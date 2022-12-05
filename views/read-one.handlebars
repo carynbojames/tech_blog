@@ -1,7 +1,7 @@
 <div>Single Blog Post</div>
 <br>
 {{!-- {{  GET { }.model name }} --}}
-<div class="card mb-3" style="width: 18rem;">
+<div class="card mb-3" id={{blog.id}} style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">{{blog.title}}</h5>
     <h6 class="card-subtitle mb-2 text-muted">{{blog.author}}</h6>
@@ -9,11 +9,10 @@
     <a href="http://localhost:3002/{{blog.id}}" class="card-link">Add a Comment</a>
     <a href="#" class="card-link">Another link</a>
   </div>
-</div>
+</div> 
 <br>
+
 {{!-- {{> comment}} --}}
-
-
 <form class="commentForm">
   <div class="mb-3">  
     <label for="exampleFormControlTextarea1" class="form-label">Add Comment</label>

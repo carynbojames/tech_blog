@@ -1,9 +1,23 @@
 const router = require('express').Router()
-const { User } = require('../../models') // Changed at 30:00 to this
+const { User } = require('../../models') 
 
-// login user ('/api/user/login')
-// router.post('/login', async (req, res) => {
-//     console.log(req.body)
-// })
+// signup user
+router.post('/', async (req, res) => {
+    try {
+      const userData = await User.create(req.body);
+  
+      req.session.save(() => {
+        req.session.userId = userData.dataValues.id;
+        req.session.email = userData.dataValues.email;
+        req.session.loggedIn = true;
+        
+        return res.status(200).json(userData);
+        
+      });
+    } catch (err) {
+        return res.status(400).json(err);
+    
+    }
+  });
 
-module.exports
+module.exports = router

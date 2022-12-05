@@ -4,13 +4,13 @@ const User = require('./Users')
 const BlogEntry = require('./Blog-Entries')
 const BlogComment = require('./Blog-Comments')
 
-// User.hasMany(BlogEntry, {
-//     foreignKey: 'user'
-// })
+User.hasMany(BlogEntry, {
+    foreignKey: 'user'
+})
 
-// BlogEntry.belongsTo(User, {
-//     foreignKey: 'user'
-// })
+BlogEntry.belongsTo(User, {
+    foreignKey: 'user'
+})
 
 BlogEntry.hasMany(BlogComment, {
     foreignKey: 'blog_entries',

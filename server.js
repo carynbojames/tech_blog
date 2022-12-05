@@ -39,7 +39,7 @@ const sess = {
 }
 
 // Create middleware for cookie session
-app.use(session(sess))
+// app.use(session(sess))
 
 // Static middleware
 app.use(express.static(path.join(__dirname, 'public')));
