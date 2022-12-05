@@ -24,7 +24,7 @@ BlogComments.init(
         },
         // Doesn't work when this one is commented out
         author: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             references: {
                 model: 'users',
                 key: 'userId'

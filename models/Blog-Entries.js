@@ -19,13 +19,13 @@ BlogEntry.init(
 			type: DataTypes.STRING
 		},
 		// Works when this one is commented out
-		// author: {
-		// 	type: DataTypes.STRING,
-		// 	references: {
-		// 		model: 'users',
-		// 		key: 'userId'
-		// 	}
-		// } 
+		author: {
+			type: DataTypes.INTEGER,
+			references: {
+				model: 'users',
+				key: 'userId'
+			}
+		} 
 	},
 	{
 		sequelize, 

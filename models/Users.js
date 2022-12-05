@@ -26,11 +26,11 @@ Users.init(
                 isEmail: true
             }
         },
-        // username: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false,
-        //     unique: true
-        // },
+        username: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true
+        },
         password: {
             type: DataTypes.INTEGER, 
             allowNull: false,
