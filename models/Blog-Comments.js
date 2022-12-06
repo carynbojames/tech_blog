@@ -15,21 +15,21 @@ BlogComments.init(
         body: {
             type: DataTypes.STRING
         },
-        blogId: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'blog_entries',
-                key: 'blogId'
-            }
-        },
+        // blogId: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'blog_entries',
+        //         key: 'blogId'
+        //     }
+        // },
         // Doesn't work when this one is commented out
-        author: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'users',
-                key: 'userId'
-            }
-        }
+        // author: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'user',
+        //         key: 'userId'
+        //     }
+        // }
     },
     {
         sequelize,

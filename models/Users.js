@@ -1,16 +1,18 @@
+// Reference: 13-ORM > 15-Ins_Password_Hashing
+
 const { Model, DataTypes } = require('sequelize')
 const sequelize = require('../config/connection')
 const bcrypt = require('bcrypt')
 
 // Set up method to run on instance data (per user) to check password
 // QUESTION: How does it get passed to this? 
-class Users extends Model {
+class User extends Model {
     checkPassword(loginPw) {
         return bcrypt.compareSync(loginPw, this.password)
     }
 }
 
-Users.init(
+User.init(
     {
         userId: {
             type: DataTypes.INTEGER,
@@ -47,8 +49,8 @@ Users.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'users'
+        modelName: 'user'
     }
 )
 
-module.exports = Users
+module.exports = User

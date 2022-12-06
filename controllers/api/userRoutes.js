@@ -1,11 +1,11 @@
 const router = require('express').Router()
-const { Users } = require('../../models') 
+const { User } = require('../../models/Users') 
 
 // signup user
 router.post('/', async (req, res) => {
     console.log(req.body)
     try {
-      const userData = await Users.create(req.body);
+      const userData = await User.create(req.body);
       console.log('userData: ', userData)
       return res.status(200).json(userData);
       
@@ -26,7 +26,7 @@ router.post('/', async (req, res) => {
 router.post('/login', async (req, res) => {
     console.log(req.body)
     try {
-        const userData = await Users.findOne({
+        const userData = await User.findOne({
             // username = user model
             // req.body.username = login JavaScript
             where: {username: req.body.username}

@@ -1,50 +1,72 @@
-const Users = require('./Users')
+const User = require('./Users')
 const BlogEntry = require('./Blog-Entries')
 const BlogComments = require('./Blog-Comments')
 
 // sourceModel.belongsTo(targetModel)
 
-// BlogEntry.belongsTo(Users, {
-//     foreignKey: 'userId',
-//     onDelete: 'CASCADE'
-//   });
+// Blog Entry must have a user
+BlogEntry.belongsTo(User, {
+    foreignKey: 'userId', 
+    onDelete: 'CASCADE'
+  });
+  // Foreign key is in BlogEntry model
+
+BlogEntry.hasMany(BlogComments, {
+    foreignKey: 'blogId',
+    onDelete: 'CASCADE'
+})
+// Foreign key is in BlogComments model
+
+BlogComments.belongsTo(User, {
+    foreignKey: 'userId',
+    onDelete: 'CASCADE'
+})
+// Foreign key is in BlogComments model
+
+
+// QUESTION: By not defining a foreign key in the model and allowing the association to do it, do you avoid the issue of having multiple foreign keys one table when it's not a belongsToMany? 
+
+
 
 // BlogEntry.hasMany(BlogComments, {
 //     foreignKey: 'blogId',
 //     onDelete: 'CASCADE'
 // })
 
-// BlogComments.belongsTo(Users, {
-//     foreignKey: 'userId',
-//     onDelete: 'CASCADE'
-// })
 
-// BlogEntry.hasOne(Users, {
-//     foreignKey: 'author'
-// })
 
-// Users.belongsTo(BlogEntry, {
-//     foreignKey: 'author'
-// })
 
+
+
+
+/// ---- Incorrect association logic for all below?
 
 // BlogComments.hasOne(Users, {
 //     foreignKey: 'author'
 // })
 
-// Users.belongsTo(BlogEntry, {
-//     foreignKey: 'author'
-// })
-
-// BlogEntry.hasMany(BlogComments, {
-//     foreignKey: 'blogId',
-//     onDelete: 'CASCADE'
-// })
 
 // BlogComments.belongsTo(BlogEntry, {
 //     foreignKey: 'blogId'
 // })
 
+// Users.belongsTo(BlogEntry, {
+//     foreignKey: 'author'
+// })
 
-module.exports = { Users, BlogEntry, BlogComments }
+
+/// ---- Foreign Key: 'author' in Users model
+/// ---- Primary Key: 'userId' in
+
+// BlogEntry.hasOne(Users, {
+//     foreignKey: 'author'
+// })
+// Foreign key is in Users model
+
+// Users.belongsTo(BlogEntry, {
+//     foreignKey: 'author'
+// })
+// Foreign key is in Users model
+
+module.exports = { User, BlogEntry, BlogComments }
 
