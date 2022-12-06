@@ -19,7 +19,7 @@ const sess = {
     maxAge: 24 * 60 * 60 *1000,
   }, 
   resave: false,
-  saveUnitialized: true,
+  saveUninitialized: true,
   // Create new instance of SequelizeStore
   store: new SequelizeStore({
     // Save sessions on the database

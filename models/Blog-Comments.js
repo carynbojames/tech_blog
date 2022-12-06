@@ -15,6 +15,9 @@ BlogComments.init(
         body: {
             type: DataTypes.STRING
         },
+        // This was correct. The associations were wrong. 
+        // Uncommented and no server error
+        // TEST: Will the associations work without these especially since this model has two foreign keys? 
         // blogId: {
         //     type: DataTypes.INTEGER,
         //     references: {
@@ -22,8 +25,7 @@ BlogComments.init(
         //         key: 'blogId'
         //     }
         // },
-        // Doesn't work when this one is commented out
-        // author: {
+        // userId: {
         //     type: DataTypes.INTEGER,
         //     references: {
         //         model: 'user',
