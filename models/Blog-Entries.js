@@ -20,13 +20,13 @@ BlogEntry.init(
 		},
 		// This was correct. The associations were wrong.
 		// TEST: Could these be commented in and out w/o issue since the association makes decisions on foreign keys? 
-		userId: {
-			type: DataTypes.INTEGER, // Data type has to match
-			references: {
-				model: 'user',
-				key: 'userId'
-			}
-		} 
+		// userId: {
+		// 	type: DataTypes.INTEGER, // Data type has to match
+		// 	references: {
+		// 		model: 'user',
+		// 		key: 'userId'
+		// 	}
+		// } 
 	},
 	{
 		sequelize, 

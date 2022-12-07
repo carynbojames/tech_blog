@@ -1,22 +1,23 @@
 const router = require('express').Router()
-const { User } = require('../../models/Users') 
+const User = require('../../models/Users') 
 
 // signup user
 router.post('/', async (req, res) => {
-    console.log(req.body)
+    console.log('terminal req.body', req.body) // To here
     try {
       const userData = await User.create(req.body);
-      console.log('userData: ', userData)
-      return res.status(200).json(userData);
+      const user = userData.map((data) => data.get({ plain: true }))
+      console.log('userData: ', user) // Do not receive this
+    //   return res.status(200).json(userData);
       
-    //   req.session.save(() => {
-    //     req.session.userId = userData.dataValues.id;
-    //     req.session.email = userData.dataValues.email;
-    //     req.session.loggedIn = true;        
-    //   });
+      req.session.save(() => {
+    //     req.session.userId = user.dataValues.id;
+    //     req.session.email = user.dataValues.email;
+        req.session.loggedIn = true;        
+      });
     } catch (err) {
-        return res.status(400).json(err);
-    
+        console.log(err)
+        res.status(500).json(err)
     }
   });
 

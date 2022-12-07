@@ -23,9 +23,11 @@ router.post('/', async (req, res) => {
 	console.log('new blog req.body', req.body)
 	try {
 		const blogData = await BlogEntry.create({
+			// modelName : req.body.javascriptObjectVariableName
 			title: req.body.blog_title, 
 			body: req.body.blog_body,
-			author: req.body.author
+			userId: req.body.author
+			// userId: parseInt(req.body.author) -- Will need to pass in an integer value
 		})
 	res.status(200).json(blogData)
 	} catch (err) {
