@@ -6,8 +6,8 @@ router.post('/', async (req, res) => {
     console.log('terminal req.body', req.body) // To here
     try {
       const userData = await User.create(req.body);
-      const user = userData.map((data) => data.get({ plain: true }))
-      console.log('userData: ', user) // Do not receive this
+    //   const user = userData.map((data) => data.get({ plain: true }))
+    //   console.log('userData: ', user) // Do not receive this
     //   return res.status(200).json(userData);
       
       req.session.save(() => {
